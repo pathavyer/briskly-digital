@@ -4,6 +4,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WatchTimePlugin = require('webpack-watch-time-plugin');
 const cssnano = require('cssnano');
+const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -93,6 +94,7 @@ module.exports = (env, argv) => {
         {
           loader: 'css-loader',
           options: {
+            importLoaders: 1,
             sourceMap: true,
           },
         },
@@ -100,7 +102,9 @@ module.exports = (env, argv) => {
           loader: 'postcss-loader',
           options: {
             ident: 'postcss',
-            plugins: [autoprefixer({})],
+            plugins: [
+              autoprefixer({}),
+            ],
             sourceMap: true,
           },
         },
@@ -123,6 +127,7 @@ module.exports = (env, argv) => {
         {
           loader: 'css-loader',
           options: {
+            importLoaders: 1,
             sourceMap: true,
           },
         },
@@ -131,6 +136,7 @@ module.exports = (env, argv) => {
           options: {
             ident: 'postcss',
             plugins: [
+              require('tailwindcss'),
               cssnano({
                 preset: 'default',
               }),

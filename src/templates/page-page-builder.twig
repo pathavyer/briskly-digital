@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="content-wrapper bg-gray-500">
+        {% for item in post.meta('content') %}
+            {% if item.acf_fc_layout == 'hero_slider' %}
+                {% for slider in item.hero_slider %}
+                    <h2>{{ slider.headline }}</h2>
+                    <p>{{ slider.sub_headline }}</p>
+                    <img src="{{ slider.slider_image }}" alt="">
+                {% endfor %}
+                
+            {% endif %}
+        {% endfor %}
+{% endblock %}
