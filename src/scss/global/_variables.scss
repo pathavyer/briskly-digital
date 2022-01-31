@@ -1,0 +1,38 @@
+// Media size
+$breakpoints: (
+  'small':  ( min-width:  767px ),
+  'medium': ( min-width:  992px ),
+  'large':  ( min-width: 1280px )
+) !default;
+
+
+// Spacing
+$xs-spacing: 8px;
+$sm-spacing: 16px;
+$md-spacing: 16px;
+$lg-spacing: 24px;
+
+// Colors
+
+$color-primary: #2B6452;
+$color-primary--light:#5B9581;
+$color-primary--lighter:#8EC9B3;
+$color-primary--darkest:#003727;
+$color-secondary: #fff;
+$color-secondary--tint: #C2FFE8;
+
+// Text
+$text-color--light: $color-secondary;
+$text-color--dark: $color-primary--darkest;
+$link-color: $color-primary--light;
+
+// Button
+$button-color-primary: $color-primary;
+$button-color-secondary: $color-secondary;
+
+// Opacity
+$light-70: rgba($color-secondary, 0.7);
+
+
+// Box shadow
+$image-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3), inset 0 -2px 6px 0 rgba(10, 37, 64, 0.35);

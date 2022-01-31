@@ -1,0 +1,71 @@
+{#
+  Title: Features Why
+  Description: Section to showcases features and why us
+  Category: formatting
+  Icon: admin-comments
+  Keywords: features why us blocks
+  Mode: edit
+  Align: left
+  PostTypes: page post
+  SupportsAlign: center
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section--wide feature-why">
+  <div bp="container">
+		<div class="section__content" bp="grid 12">
+			<div class="section__content--wrapper">
+				<div class="section__content" bp="grid 6@md vertical-end">
+					<div>
+						<img src="https://via.placeholder.com/450x300" alt="">
+					</div>
+					<div>
+						{% include "partial/copy-block.twig" with 
+								{
+									subhead: fields.feature_why_main_content.subhead,
+									h2: fields.feature_why_main_content.headline,
+									body_wysiwyg: fields.feature_why_main_content.body,
+									link: {
+										type: fields.feature_why_main_content.link,
+										details: {
+											url: fields.feature_why_main_content.link_details.url,
+											title: fields.feature_why_main_content.link_details.title,
+											target: fields.feature_why_main_content.link_details.target,
+										},
+									}
+								}
+							%}
+					</div>
+				</div>
+			</div>
+
+			<div class="section__content--wrapper">
+				<div bp="grid 4@md">
+					{% for item in fields.feature_why_items %}
+					<div class="feature-why__item">
+						<div bp="flex">
+							<div bp="fit margin-right">
+								{% include "partial/copy-block.twig" with 
+									{
+										icon: true,
+									}
+								%}
+							</div>
+							<div bp="fill">
+								{% include "partial/copy-block.twig" with 
+									{
+										p: item.headline,
+										body_plain: item.body
+									}
+								%}
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+  </div>
+  <div class="feature-why__background"></div>
+</section>

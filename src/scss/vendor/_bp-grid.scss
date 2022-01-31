@@ -1,0 +1,8 @@
+// adjusting max container width
+[bp~="container"] {
+    max-width: 1280px;
+}
+
+[bp~="grid"] {
+    grid-gap: 25px;
+}

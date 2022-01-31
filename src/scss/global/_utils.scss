@@ -1,0 +1,58 @@
+.section {
+  &--wide {
+    padding: 5rem 2.5rem;
+
+    @include media("medium") {
+      padding: 7.5rem 4.5rem;
+    }
+  }
+
+  &__content {
+    &[bp~="grid"] {
+      row-gap: 6rem;
+      column-gap: 6rem;
+    }
+  }
+
+  &__copy {
+    &[bp~="grid"] {
+      row-gap: .8rem;
+    }
+  }
+}
+
+
+.copy {
+	// Copy head line variation
+  &__head {
+    p {
+      @extend .bolder;
+    }
+  }
+	// Copy content spacing
+  &__body {
+    p {
+			margin-bottom: 1.2rem;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
+			& + ul {
+				margin-top: 1.2rem;
+			}
+		}
+
+		ul {
+			margin-bottom: 1.2rem;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
+			& + p {
+				margin-top: 1.2rem;
+			}
+		}
+  }
+}

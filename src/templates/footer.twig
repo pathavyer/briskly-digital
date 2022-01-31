@@ -1,1 +1,33 @@
-Copyright {{ "now"|date('Y') }}
+<div bp="container">
+  <div class="footer__content" bp="grid">
+    <div bp="4@md">
+      <div>
+
+        {% include "partial/copy-block.twig" with 
+					{
+									
+						p: "Briskly Digital",
+						body_wysiwyg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt rem id debitis delectus cum recusandae nisi quod, maxime harum, odio possimus architecto sapiente voluptas sint iure cupiditate, voluptate voluptatem",
+						
+					}
+				%}
+      </div>
+    </div>
+    <div bp="8@md">
+      <div class="footer__links" bp="grid 4@sm">
+        <div>
+
+        </div>
+        <div>
+          {% include "menu.twig" with { footer_menu: footer_menu.get_items } %}
+        </div>
+        <div>4</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Copyright {{ "now"|date('Y') }} -->

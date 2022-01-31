@@ -1,0 +1,66 @@
+{#
+  Title: Call to Action
+  Description: Call to action block
+  Category: formatting
+  Icon: admin-comments
+  Keywords: cta or call to action button
+  Mode: edit
+  Align: left
+  PostTypes: page post
+  SupportsAlign: center
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section--wide cta">
+  <div class="cta__inner">
+    <div bp="container">
+      <div class="section__content" bp="grid 6@md vertical-center">
+        <div class="section__content--wrapper">
+					{% include "partial/copy-block.twig" with
+						{
+							h2: fields.cta_main_content.headline,
+							body_plain: fields.cta_main_content.body,
+							btn: {
+								type: fields.cta_main_content.button,
+								details: {
+									title: fields.cta_main_content.button_details.title,
+									url: fields.cta_main_content.button_details.url,
+									target: fields.cta_main_content.button_details.target,
+								},
+							},
+							cta: true,
+							content_class: 'cta__content'
+						} 	
+					%}
+        </div>
+
+        <div class="section__content--wrapper">
+					<div bp="grid 6@lg vertical-start">
+						{% for item in fields.cta_sub_content  %}
+							<div>
+								{% include "partial/copy-block.twig" with
+									{
+										icon: item.icon,
+										p: item.headline,
+										body_plain: item.body,
+										link: {
+											title: item.link_title,
+											type: item.link,
+											details: {
+												url: item.link_details.url,
+												title: item.link_details.title,
+												target: item.link_details.target,
+											},
+										},
+										content_class: ['cta__content', 'cta__content--secondary' ]
+									} 	
+								%}
+							</div>
+						{% endfor %}
+					</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

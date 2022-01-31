@@ -1,16 +1,12 @@
 {
-    "name": "joppuyo/timber-starter-theme-webpack",
-    "description": "Starter theme to build a Timber theme",
+    "name": "Briskly/Briskly",
+    "description": "Briskly Digital Theme",
     "type": "wordpress-theme",
     "minimum-stability": "stable",
     "authors": [
         {
-            "name": "Johannes Siipola",
-            "email": "johannes@siipo.la"
-        },
-        {
-            "name": "jarednova",
-            "email": "jared@upstatement.com"
+            "name": "Patrick Javier",
+            "email": "pjavier@briskly.ca"
         }
     ],
     "require": {

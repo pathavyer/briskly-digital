@@ -1,6 +1,3 @@
-// SPDX-FileCopyrightText: 2017-2020 Johannes Siipola
-// SPDX-License-Identifier: CC0-1.0
-
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WatchTimePlugin = require('webpack-watch-time-plugin');
 const cssnano = require('cssnano');
@@ -18,7 +15,7 @@ module.exports = (env, argv) => {
     output: {
       filename: '[name].js',
       chunkFilename: '[name].js?ver=[chunkhash]',
-      publicPath: '/wp-content/themes/timber-starter-theme-webpack/dist/',
+      publicPath: '/wp-content/themes/briskly/dist/',
     },
     resolve: {
       extensions: ['*', '.js'],
@@ -46,7 +43,7 @@ module.exports = (env, argv) => {
               options: {
                 minimize: false,
                 interpolate: true,
-                attrs: ['img:src', 'link:href'],
+                attrs: ['img:src', 'link:href', 'object:data'],
               },
             },
           ],

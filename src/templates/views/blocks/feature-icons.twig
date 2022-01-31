@@ -1,0 +1,107 @@
+{#
+  Title: Features Icons
+  Description: Section to showcases features with icons
+  Category: formatting
+  Icon: admin-comments
+  Keywords: features icons blocks
+  Mode: edit
+  Align: left
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section--wide features-icons">
+  <div bp="container">
+    <div class="section__content" bp="grid 12">
+      <div class="section__content--wrapper">
+        <div bp="10--max">
+					{% include "partial/copy-block.twig" with 
+						{
+							subhead: "I'm subhead",
+							h2: "Why choose us",
+							body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quasi similique vitae praesentium minus et veniam incidunt nam necessitatibus aliquid. In veritatis possimus, aliquid veniam quia explicabo laboriosam exvelit.",
+						}
+					%}
+        </div>
+      </div>
+      <div class="section__content--wrapper">
+        <div bp="grid 6 3@md">
+          <div class="feature-icons__item">
+						{% include "partial/copy-block.twig" with 
+							{
+								p: "1. Discovery",
+								body: "Diam mi sem arcu quis cursus sollicitudin amet hendrerit eros delementum maecenas sed proin id sem leoplacerat eu nulla euismod facilisis tortor erat amet.",
+								icon: true,
+							}
+						%}
+					</div>
+					<div class="feature-icons__item">
+						<div class="section__copy" bp="grid 12">
+              <div class="copy__icon">
+                <img src="https://via.placeholder.com/50x50" alt="">
+              </div>
+              <div class="copy__head">
+                <p>2. Strategy</p>
+              </div>
+              <div class="copy__body">
+                <p>Diam mi sem arcu quis cursus sollicitudin amet hendrerit eros delementum maecenas sed proin id sem
+                  leo
+                  placerat eu nulla euismod facilisis tortor erat amet.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-icons__item">
+            <div class="section__copy" bp="grid 12">
+              <div class="copy__icon">
+                <img src="https://via.placeholder.com/50x50" alt="">
+              </div>
+              <div class="copy__head">
+                <p>3. Planning</p>
+              </div>
+              <div class="copy__body">
+                <p>Diam mi sem arcu quis cursus sollicitudin amet hendrerit eros delementum maecenas sed proin id sem
+                  leo
+                  placerat eu nulla euismod facilisis tortor erat amet.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-icons__item">
+            <div class="section__copy" bp="grid 12">
+              <div class="copy__icon">
+                <img src="https://via.placeholder.com/50x50" alt="">
+              </div>
+              <div class="copy__head">
+                <p>4. Design</p>
+              </div>
+              <div class="copy__body">
+                <p>Diam mi sem arcu quis cursus sollicitudin amet hendrerit eros delementum maecenas sed proin id sem
+                  leo
+                  placerat eu nulla euismod facilisis tortor erat amet.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-icons__item">
+            <div class="section__copy" bp="grid 12">
+              <div class="copy__icon">
+                <img src="https://via.placeholder.com/50x50" alt="">
+              </div>
+              <div class="copy__head">
+                <p>5. Development</p>
+              </div>
+              <div class="copy__body">
+                <p>Diam mi sem arcu quis cursus sollicitudin amet hendrerit eros delementum maecenas sed proin id sem
+                  leo
+                  placerat eu nulla euismod facilisis tortor erat amet.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
