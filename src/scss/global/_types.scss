@@ -1,0 +1,60 @@
+@import "font-face";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: $text-color--dark;
+   font-family: 'Lato'; 
+   font-weight: 300;
+   @include font-size(18, 26, normal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Playfair Display';
+    font-weight: 300;
+}
+
+h1 {
+    @include font-size(75, 85);
+}
+
+h2 {
+    @include font-size(40);
+}
+
+h3 {
+    @include font-size(28);
+}
+
+h4 {
+    @include font-size(22);
+}
+
+h5 {
+    @include font-size(18);
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+}
+
+// Font weight utils
+
+.bold {
+    font-weight: bold;
+}
+
+.bolder {
+    font-weight: 400;
+}
+
+small {
+    @include font-size(14);
+}

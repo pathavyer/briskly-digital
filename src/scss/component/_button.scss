@@ -1,0 +1,35 @@
+.btn {
+  border-radius: .2rem;
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  text-decoration: none;
+  font-weight: 400;
+  @include font-size(16);
+
+  &--primary {
+    color: $text-color--light;
+    background-color: $button-color-primary;
+  }
+
+  &--secondary {
+    color: $text-color--dark;
+    background-color: $button-color-secondary;
+  }
+
+}
+
+
+.link {
+  &--secondary {
+    color: $text-color--light;
+  }
+
+  display: inline-flex;
+  align-items: flex-end;
+}
+
+.icon-arrow {
+  height: 1.9rem;
+  width: 1.9rem;
+  margin-left: .5rem;
+}

@@ -5,12 +5,12 @@ insert_final_newline = true
 
 [*.php]
 indent_style = space
-indent_size = 4
+indent_size = 2
 insert_final_newline = true
 
 [*.twig]
 indent_style = space
-indent_size = 4
+indent_size = 2
 insert_final_newline = true
 
 [*.scss]
@@ -20,7 +20,7 @@ insert_final_newline = true
 
 [composer.json]
 indent_style = space
-indent_size = 4
+indent_size = 2
 insert_final_newline = true
 
 [package.json]

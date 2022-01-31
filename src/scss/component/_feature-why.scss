@@ -1,0 +1,19 @@
+.feature-why {
+    position: relative;
+
+    &__content {
+        &--top {
+            margin-bottom: 10rem;
+        }
+    }
+
+    &__icon {
+        max-width: 5rem;
+        margin-right: 1.5rem;
+
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+}

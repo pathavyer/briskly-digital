@@ -1,3 +1,24 @@
-@import "../../node_modules/bootstrap/scss/bootstrap";
+// Vendor
+@import "blueprint-css/dist/blueprint";
+@import "vendor/bp-grid";
+@import "vendor/embla-carousel";
 
-// Your styles here
+// Global
+@import "global/normalize";
+@import "global/variables";
+@import "global/mixins";
+@import "global/types";
+@import "global/utils";
+
+// Component
+@import "component/button";
+@import "component/cta";
+@import "component/clients";
+@import "component/header";
+@import "component/hero";
+@import "component/feature-icons";
+@import "component/feature-services";
+@import "component/feature-why";
+@import "component/footer";
+@import "component/media";
+@import "component/menu-modal";

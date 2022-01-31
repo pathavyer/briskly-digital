@@ -1,0 +1,28 @@
+{#
+  Title: Hero
+  Description: Hero Section
+  Category: formatting
+  Icon: admin-comments
+  Keywords: hero main header "hero section of page"
+  Mode: edit
+  Align: left
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: false
+  SupportsMultiple: false
+#}
+
+<section class="hero">
+    <div class="section--wrapper" bp="container">
+        <div class="hero__content" bp="grid 6@md">
+            <div class="hero__copy" bp="flex">
+                <div class="hero__copy--end" bp="fill">
+                    <h1>{{ fields.hero_title }}</h1>
+                    <p>{{ fields.hero_sub_title }}</p>
+                </div>
+            </div>
+            <div class="hero__media"></div>
+        </div>
+    </div>
+    <canvas class="hero__bg-gradient" id="gradient-canvas" data-transition-in></canvas>
+</section>

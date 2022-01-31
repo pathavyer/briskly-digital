@@ -1,0 +1,57 @@
+{#
+  Title: Features Services
+  Description: Section to showcases features and services
+  Category: formatting
+  Icon: admin-comments
+  Keywords: features services blocks
+  Mode: edit
+  Align: left
+  PostTypes: page
+  SupportsAlign: center
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+<section class="section--wide feature-services">
+  <div bp="container">
+    <div class="section__content" bp="grid 6@md">
+      <div class="section__content--wrapper">
+        {% include "partial/copy-block.twig" with 
+          {
+            subhead: fields.feature_services_main.subhead,
+            h2: fields.feature_services_main.headline,
+            body_wysiwyg: fields.feature_services_main.body,
+            btn: {
+              type: fields.feature_services_main.button,
+              details: {
+                title: fields.feature_services_main.button_details.title,
+                url: fields.feature_services_main.button_details.url,
+                target: fields.feature_services_main.button_details.target,
+              },
+            },
+          }
+        %}
+      </div>
+
+      <div class="section__content--wrapper">
+        <div bp="grid 6@sm">
+          {% for item in fields.feture_services_item %}
+          <div class="feature-services__item">
+            {% include "partial/copy-block.twig" with 
+              {
+                p: item.headline,
+                body_plain: item.body,
+                img: {
+                  url: item.image_thumbnail.url,
+                  title: item.image_thumbnail.title,
+                  alt: item.image_thumbnail.alt
+                }
+              }
+            %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

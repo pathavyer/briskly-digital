@@ -1,10 +1,42 @@
-{% if menu %}
-    <ul>
-        {% for item in items %}
-            <li class="{{ item.classes | join(' ') }}">
-                <a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-                {% include "menu.twig" with {'items': item.children} %}
-            </li>
-        {% endfor %}
-    </ul>
+
+{% if primary_menu %}
+	<ul>
+		{% for item in primary_menu %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a class="menu-item__link" target="{{ item.target | default("_self") }}" href="{{ item.link }}">{{ item.title }}</a>
+			{% include "menu.twig" with {primary_menu: item.children} %}
+		{% endfor %}
+		</li>
+	</ul>
 {% endif %}
+
+{% if legal_menu %}
+	<ul>
+		{% for item in legal_menu %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a class="menu-item__link" target="{{ item.target | default("_self") }}" href="{{ item.link }}">{{ item.title }}</a>
+		{% endfor %}
+		</li>
+	</ul>
+{% endif %}
+
+{% if footer_menu %}
+	<ul>
+		{% for item in footer_menu %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a class="menu-item__link" target="{{ item.target | default("_self") }}" href="{{ item.link }}">{{ item.title }}</a>
+		{% endfor %}
+		</li>
+	</ul>
+{% endif %}
+
+
+
+    
+
+{#     
+{% if legal_menu %}
+		{% for item in legal_menu %}
+				<a class="menu__item" target="{{ item.target | default("_self") }}" href="{{ item.link }}">{{ item.title }}</a>
+		{% endfor %}
+{% endif %} #}

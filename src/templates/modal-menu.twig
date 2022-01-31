@@ -1,0 +1,38 @@
+<div class="modal micromodal-slide modal__menu" id="menu-modal" aria-hidden="true">
+  <div class="modal__overlay" tabindex="1" data-micromodal-close>
+    <div class="modal__wrapper" bp="container">
+      <div bp="6--max@lg" class="modal__container" role="dialog" aria-modal="true" aria-labelledby="menu-modal-title">
+        <header bp="flex">
+					<div bp="fill">
+						<h3>Menu</h3>
+					</div>
+					<div bp="fit">
+						<button class="modal__close" aria-label="Close modal" data-micromodal-close>close</button>
+					</div>
+          
+        </header>
+        <div class="menu" bp="grid 6@md">
+          <div>
+						{% include "menu.twig" with {
+							primary_menu: primary_menu.get_items
+							} 
+						%}
+					</div>
+
+          <div class="modal__cta">
+						hello
+					</div>
+
+        </div>  
+				<footer>
+					<div>
+						{% include "menu.twig" with {
+								legal_menu: legal_menu.get_items
+							} 
+						%}
+					</div>
+				</footer>
+      </div>
+    </div>
+  </div>
+</div>
