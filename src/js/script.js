@@ -5,7 +5,6 @@ import initStickyNav from "./component/stickyNav.js";
 import initCarousel  from "./component/carousel.js";
 import { Gradient } from './component/gradient.js';
 
-
 // Your scripts here
 menuModalInit();
 initStickyNav();
