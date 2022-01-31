@@ -1,7 +1,5 @@
 
-# The Timber Starter Theme with Webpack
-
-This is basically the [Timber starter theme](https://github.com/timber/starter-theme) but with webpack added for managing front-end assets.
+# Briskly Digital Theme - Extended from Timber Boilerplate
 
 ## What's included
 
