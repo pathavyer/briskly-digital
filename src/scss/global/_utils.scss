@@ -55,4 +55,18 @@
 			}
 		}
   }
+
+  // Footer
+  &__footer {
+    margin-top: .7rem;
+  }
+}
+
+
+figure {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }

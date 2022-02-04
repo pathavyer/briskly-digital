@@ -36,8 +36,10 @@
   </div>
   {% elseif img %}
   <div class="copy__media">
-    <img class="copy__media--image" src="{{ img.url | default("https://via.placeholder.com/75x75") }}"
+    <figure>
+      <img class="copy__media--image" src="{{ img.url | default("https://via.placeholder.com/75x75") }}"
       alt="{{ img.alt }}">
+    </figure>
   </div>
   {% endif %}
 
