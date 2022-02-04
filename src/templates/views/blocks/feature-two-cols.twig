@@ -12,20 +12,21 @@
   SupportsMultiple: true
 #}
 
-{% set vertical_align = two_cols_content.columns_content_align %}
+{% set vertical_align = fields.two_cols_content.columns_content_align %}
+
 
 <section class="section--wide two-cols">
   <div bp="container">
-    <div bp="grid 6@md vertical-{{ vertical_align | default('center') }}">
+    <div bp="grid 6@md {{ 'vertical-' ~ vertical_align }}">
       <div>
         <img src="http://via.placeholder.com/500x500" alt="">
       </div>
       <div>
         {% include "partial/copy-block.twig" with 
           {
-            subhead: "this is subhead",
-            h2: "This is main headline",
-            body_wysiwyg: "Nisl sollicitudin purus rutrum aliquam tortor sed orci suspendisse eu quisque morbi nunc tortor id euismod scelerisque amet morbi vel nulla lacus id nunc hendrerit.",
+            subhead: fields.two_cols_content.subhead,
+            h2: fields.two_cols_content.headline,
+            body_wysiwyg: fields.two_cols_content.body_wysiwyg,
             btn: {
               type: "primary",
               details: {

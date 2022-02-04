@@ -93,7 +93,7 @@
                         "end": "End"
                     },
                     "allow_null": 0,
-                    "default_value": "Center",
+                    "default_value": "center",
                     "layout": "horizontal",
                     "return_format": "value"
                 }
@@ -118,5 +118,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643796664
+    "modified": 1643841259
 }
