@@ -95,6 +95,7 @@ class BrisklySite extends Timber\Site
 					'acf/clients',
 					'acf/feature-icons',
 					'acf/feature-services',
+					'acf/feature-two-cols',
 					'acf/feature-why',
 					'acf/hero',
 					'acf/page-hero-a',

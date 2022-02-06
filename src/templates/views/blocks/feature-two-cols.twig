@@ -1,0 +1,45 @@
+{#
+  Title: Features Two Columns
+  Description: Section to showcases 2 cols features content
+  Category: formatting
+  Icon: admin-comments
+  Keywords: features icons blocks
+  Mode: edit
+  Align: left
+  PostTypes: page
+  SupportsAlign: center
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+{% set vertical_align = fields.two_cols_content.columns_content_align %}
+
+
+<section class="section--wide two-cols">
+  <div bp="container">
+    <div class="section__content" bp="grid 6@md {{ 'vertical-' ~ vertical_align }}">
+      <div>
+        <figure>
+          <img src="http://via.placeholder.com/500x500" alt="">
+        </figure>
+      </div>
+      <div>
+        {% include "partial/copy-block.twig" with 
+          {
+            subhead: fields.two_cols_content.subhead,
+            h2: fields.two_cols_content.headline,
+            body_wysiwyg: fields.two_cols_content.body_wysiwyg,
+            btn: {
+              type: "primary",
+              details: {
+                url: "#",
+                title: "Learn more",
+                target: "_new",
+              }
+            }
+          } 
+        %}
+      </div>
+    </div>
+  </div>
+</section>
