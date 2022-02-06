@@ -83,6 +83,7 @@ class BrisklySite extends Timber\Site
 				add_filter('acf/settings/save_json', [$this, 'acf_json_save_point']);
 				add_filter('acf/settings/load_json', [$this, 'acf_json_load_point']);
 				add_filter('use_block_editor_for_post_type', [$this, 'prefix_disable_gutenberg'], 10, 2);
+				add_action( 'wp_enqueue_scripts', [$this, 'remove_wp_block_library_css'], 100 );
 				parent::__construct();
 				
 		}
@@ -139,6 +140,17 @@ class BrisklySite extends Timber\Site
 				$paths[] = get_stylesheet_directory() . '/src/acf-json';
 				// return
 				return $paths;
+		}
+
+		/** Disable wordpress default style */
+		//REMOVE GUTENBERG BLOCK LIBRARY CSS FROM LOADING ON FRONTEND
+		public function remove_wp_block_library_css()
+		{
+			wp_dequeue_style( 'wp-block-library' );
+			wp_dequeue_style( 'wp-block-library-theme' );
+			wp_dequeue_style( 'wc-block-style' ); // REMOVE WOOCOMMERCE BLOCK CSS
+			wp_dequeue_style( 'global-styles' ); // REMOVE THEME.JSON
+			
 		}
 
 		/** This is where you add some context
