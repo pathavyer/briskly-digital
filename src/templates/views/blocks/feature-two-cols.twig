@@ -17,9 +17,11 @@
 
 <section class="section--wide two-cols">
   <div bp="container">
-    <div bp="grid 6@md {{ 'vertical-' ~ vertical_align }}">
+    <div class="section__content" bp="grid 6@md {{ 'vertical-' ~ vertical_align }}">
       <div>
-        <img src="http://via.placeholder.com/500x500" alt="">
+        <figure>
+          <img src="http://via.placeholder.com/500x500" alt="">
+        </figure>
       </div>
       <div>
         {% include "partial/copy-block.twig" with 
