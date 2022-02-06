@@ -69,7 +69,14 @@
    
       {% if media %}
         <div class="page-hero__image">
-          <img src="{{ media.url }}" alt="{{ media.alt }}">
+          {% include "partial/media.twig" with 
+            {
+              img: {
+                url: media.url,
+                alt: media.alt
+              }
+            }
+          %}
         </div>
       {% endif %}
     </div>
