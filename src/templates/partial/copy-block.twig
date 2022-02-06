@@ -36,10 +36,13 @@
   </div>
   {% elseif img %}
   <div class="copy__media">
-    <figure>
-      <img class="copy__media--image" src="{{ img.url | default("https://via.placeholder.com/75x75") }}"
-      alt="{{ img.alt }}">
-    </figure>
+    {% include "partial/media.twig" with {
+        img: {
+          url: "https://via.placeholder.com/50x50",
+          alt: "Default alt term"
+        }
+      } 
+    %}
   </div>
   {% endif %}
 

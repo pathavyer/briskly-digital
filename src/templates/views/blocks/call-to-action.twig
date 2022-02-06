@@ -17,7 +17,7 @@
     <div bp="container">
       <div class="section__content" bp="grid 6@md vertical-center">
         <div class="section__content--wrapper">
-					{% include "partial/copy-block.twig" with
+          {% include "partial/copy-block.twig" with
 						{
 							h2: fields.cta_main_content.headline,
 							body_plain: fields.cta_main_content.body,
@@ -36,10 +36,10 @@
         </div>
 
         <div class="section__content--wrapper">
-					<div bp="grid 6@lg vertical-start">
-						{% for item in fields.cta_sub_content  %}
-							<div>
-								{% include "partial/copy-block.twig" with
+          <div bp="grid 6@lg vertical-start">
+            {% for item in fields.cta_sub_content  %}
+            <div>
+              {% include "partial/copy-block.twig" with
 									{
 										icon: item.icon,
 										p: item.headline,
@@ -56,9 +56,9 @@
 										content_class: ['cta__content', 'cta__content--secondary' ]
 									} 	
 								%}
-							</div>
-						{% endfor %}
-					</div>
+            </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>

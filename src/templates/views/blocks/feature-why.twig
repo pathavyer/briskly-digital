@@ -18,9 +18,13 @@
       <div class="section__content--wrapper">
         <div class="section__content" bp="grid 6@md vertical-end">
           <div>
-            <figure>
-							<img src="https://via.placeholder.com/450x300" alt="">
-						</figure>
+           {% include "partial/media.twig" with {
+              img: {
+                url: "https://via.placeholder.com/500x300",
+                alt: "Alternative terms"
+              }
+            } 
+           %}
           </div>
           <div>
             {% include "partial/copy-block.twig" with 
