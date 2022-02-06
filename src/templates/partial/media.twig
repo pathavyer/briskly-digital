@@ -1,0 +1,15 @@
+{% set imgPlaceholder = "https://via.placeholder.com/500x500" %}
+{% set altPlaceholder = "Briskly Digital" %}
+
+
+{% if img %}
+	{% set media = img %}
+{% endif %}
+
+{% if media %}
+	{% if img %}
+		<figure>
+			<img src="{{ img.url | default(imgPlaceholder) }}" alt="{{ img.alt | default(altPlaceholder) }}" />
+		</figure>
+	{% endif %}
+{% endif %}
