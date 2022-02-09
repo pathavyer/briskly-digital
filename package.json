@@ -35,7 +35,8 @@
     "raw-loader": "^1.0.0",
     "regenerator-runtime": "^0.13.7",
     "sass-loader": "^7.3.1",
-    "svgo-loader": "^2.2.1",
+    "svgo": "^2.8.0",
+    "svgo-loader": "^3.0.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-watch-time-plugin": "^0.3.0"
@@ -45,7 +46,5 @@
     "build": "webpack",
     "build-production": "webpack -p"
   },
-  "optionalDependencies": {
-    "fsevents": "^2.3.2"
-  }
+  "optionalDependencies": {}
 }

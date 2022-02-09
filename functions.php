@@ -83,9 +83,29 @@ class BrisklySite extends Timber\Site
 				add_filter('acf/settings/save_json', [$this, 'acf_json_save_point']);
 				add_filter('acf/settings/load_json', [$this, 'acf_json_load_point']);
 				add_filter('use_block_editor_for_post_type', [$this, 'prefix_disable_gutenberg'], 10, 2);
-				add_action( 'wp_enqueue_scripts', [$this, 'remove_wp_block_library_css'], 100 );
+				add_action('wp_enqueue_scripts', [$this, 'remove_wp_block_library_css'], 100);
+
+				// ACF Icon picker support
+				/// modify the path to the icons directory
+				add_filter('acf_icon_path_suffix', function ($path_suffix) {
+					return '/assets/icons/'; // After assets folder you can define folder structure
+					}
+				);
+
+				// modify the path to the above prefix
+				add_filter('acf_icon_path', function ($path_suffix) {
+						return '/app/web/app/themes/briskly/src';
+					}
+				);
+
+				// modify the URL to the icons directory to display on the page
+				add_filter('acf_icon_url', function ($path_suffix) {
+						return get_stylesheet_directory_uri();
+					}
+				);
+
 				parent::__construct();
-				
+	
 		}
 
 		/** This is where to register blocks **/
@@ -170,7 +190,7 @@ class BrisklySite extends Timber\Site
 
 				return $context;
 		}
-
+		
 		public function theme_supports()
 		{
 				// Add default posts and comments RSS feed links to head.
