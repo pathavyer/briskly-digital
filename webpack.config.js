@@ -64,6 +64,7 @@ module.exports = (env, argv) => {
             {
               loader: 'file-loader',
               options: {
+                publicPath: 'assets',
                 context: 'src',
                 name: '[path][name].[ext]?ver=[md5:hash:8]',
               },
@@ -99,7 +100,7 @@ module.exports = (env, argv) => {
           options: {
             ident: 'postcss',
             plugins: [
-              autoprefixer({}),
+              autoprefixer(),
             ],
             sourceMap: true,
           },
@@ -135,7 +136,7 @@ module.exports = (env, argv) => {
               cssnano({
                 preset: 'default',
               }),
-              autoprefixer({}),
+              autoprefixer(),
             ],
             sourceMap: true,
           },
