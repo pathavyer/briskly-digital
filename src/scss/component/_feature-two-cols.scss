@@ -1,0 +1,11 @@
+.two-cols {
+  &__cta {
+    margin-top: 2.5rem;
+  }
+
+    &__cta-group {
+      &--btn {
+      margin-right: 25px;
+    }
+  }
+}
