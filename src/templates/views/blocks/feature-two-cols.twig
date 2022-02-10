@@ -13,32 +13,70 @@
 #}
 
 {% set vertical_align = fields.two_cols_content.columns_content_align %}
+{% set ctaGroup = fields.two_cols_content.cta %}
 
 
 <section class="section--wide two-cols">
   <div bp="container">
     <div class="section__content" bp="grid 6@md {{ 'vertical-' ~ vertical_align }}">
-      <div>
+      <div >
         <figure>
           <img src="http://via.placeholder.com/500x500" alt="">
         </figure>
       </div>
-      <div>
+      <div {{ flip ? "bp='first'" }}>
         {% include "partial/copy-block.twig" with 
           {
             subhead: fields.two_cols_content.subhead,
             h2: fields.two_cols_content.headline,
-            body_wysiwyg: fields.two_cols_content.body_wysiwyg,
-            btn: {
-              type: "primary",
-              details: {
-                url: "#",
-                title: "Learn more",
-                target: "_new",
-              }
-            }
+            body_wysiwyg: fields.two_cols_content.body_wysiwyg
           } 
         %}
+
+        <div class="two-cols__cta">
+          {% for field in ctaGroup %}
+          {% if field.acf_fc_layout == "cta_group" %}
+          <div class="two-cols__cta-group" bp="flex vertical-center">
+            <div class="two-cols__cta-group--btn" bp="fit">
+              {% include "partial/cta.twig" with {
+                btn: {
+                  type: "primary",
+                  details: {
+                    url:"#",
+                    target: "_blank",
+                    title: "Test cta"
+                  }
+                }
+              } %}
+            </div>
+            <div class="two-cols__cta-group--link" bp="fill">
+              {% include "partial/cta.twig" with {
+                link: {
+                  type: "primary",
+                  details: {
+                    url:"#",
+                    target: "_blank",
+                    title: "Learn moar"
+                  }
+                }
+              } %}
+            </div>
+          </div>
+          {% elseif field.acf_fc_layout == "single_button" %} 
+            {% include "partial/cta.twig" with {
+              btn: {
+                type: "primary",
+                details: {
+                  url:"#",
+                  target: "_blank",
+                  title: "Test cta"
+                }
+              }
+            } %}
+          {% endif %}
+          {% endfor %}
+        </div>
+        
       </div>
     </div>
   </div>

@@ -96,6 +96,90 @@
                     "default_value": "center",
                     "layout": "horizontal",
                     "return_format": "value"
+                },
+                {
+                    "key": "field_6204df259ed5f",
+                    "label": "Call to Action",
+                    "name": "cta",
+                    "type": "flexible_content",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layouts": {
+                        "layout_6204df4ad2d14": {
+                            "key": "layout_6204df4ad2d14",
+                            "name": "cta_group",
+                            "label": "CTA Group",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6204e00ceafae",
+                                    "label": "Button",
+                                    "name": "button",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array"
+                                },
+                                {
+                                    "key": "field_6204e035eafaf",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array"
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        "layout_6204e06beafb0": {
+                            "key": "layout_6204e06beafb0",
+                            "name": "single_button",
+                            "label": "Single Button",
+                            "display": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_6204e07aeafb1",
+                                    "label": "Button",
+                                    "name": "button",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array"
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        }
+                    },
+                    "button_label": "Add CTA",
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -118,5 +202,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643841259
+    "modified": 1644486801
 }
