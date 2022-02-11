@@ -15,15 +15,21 @@
 {% set vertical_align = fields.two_cols_content.columns_content_align %}
 {% set cta_group = fields.two_cols_content.cta %}
 {% set flip = fields.two_cols_content.column_order %}
+{% set image = fields.two_cols_content.feature_image %}
 
 
 <section class="section--wide two-cols">
   <div bp="container">
     <div class="section__content" bp="grid 6@md {{ 'vertical-' ~ vertical_align }}">
-      <div >
-        <figure>
-          <img src="http://via.placeholder.com/500x500" alt="">
-        </figure>
+      <div>
+        {% include "partial/media.twig" with 
+          {
+            img: {
+              url: image.url | default('https://via.placeholder.com/500x400'),
+              alt: image.alt
+            }
+          } 
+        %}
       </div>
       <div {{ flip ? "bp='first@md'" }}>
         {% include "partial/copy-block.twig" with 
@@ -43,9 +49,9 @@
                 btn: {
                   type: "primary",
                   details: {
-                    url:"#",
-                    target: "_blank",
-                    title: "Test cta"
+                    url: field.button.url,
+                    target: field.button.target | default("_blank"),
+                    title: field.button.title
                   }
                 }
               } %}
@@ -55,9 +61,9 @@
                 link: {
                   type: "primary",
                   details: {
-                    url:"#",
-                    target: "_blank",
-                    title: "Learn moar"
+                    url:field.link.url,
+                    target: field.link.target | default("_blank"),
+                    title: field.link.title
                   }
                 }
               } %}
@@ -68,9 +74,9 @@
               btn: {
                 type: "primary",
                 details: {
-                  url:"#",
-                  target: "_blank",
-                  title: "Test cta"
+                  url: field.button.url,
+                  target: field.button.target | default("_blank"),
+                  title: field.button.title
                 }
               }
             } %}

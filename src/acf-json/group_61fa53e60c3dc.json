@@ -199,6 +199,30 @@
                     "button_label": "Add CTA",
                     "min": 0,
                     "max": 1
+                },
+                {
+                    "key": "field_6206319d50a86",
+                    "label": "Feature image",
+                    "name": "feature_image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": 1,
+                    "mime_types": ""
                 }
             ]
         }
@@ -221,5 +245,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1644572015
+    "modified": 1644573148
 }
