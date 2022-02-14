@@ -1,32 +1,31 @@
 export default function twoColsImageResize() {
-  let twoCols = document.querySelectorAll('.two-cols');
-  let windowWidth = window.innerWidth;
+  let twoCols = [...document.querySelectorAll('.two-cols')];
   let mobileWidth = 720;
-
+  let windowWidth;
+  
   twoCols.forEach((el, i) => {
-    const media = el.querySelector('.two-cols__media');
-    const content = el.querySelector('.two-cols__content');
-    let mediaHeight = media.clientHeight;
-    let contentHeight = content.clientHeight;
+    let media = el.querySelector('.two-cols__media');
+    let content = el.querySelector('.two-cols__content');
+    let mediaHeight;
+    let contentHeight;
 
-    let resizeOnLoad = () => {
-      console.log(windowWidth);
-
-      window.addEventListener('resize', () => {
-        mediaHeight = media.clientHeight;
-        contentHeight = content.clientHeight;
-        windowWidth = window.innerWidth;
-
-
-        if (mediaHeight <= contentHeight && windowWidth > mobileWidth) {
-          media.style.height = contentHeight + "px";
-        } else {
-          media.style.height = null;
-        }
-      });
+    let onLoadFunction = () => {
+      resizeFunction();
+      window.addEventListener('resize', resizeFunction);
     }
 
-    resizeOnLoad();
-  });
+    let resizeFunction = () => {
+      mediaHeight = media.clientHeight;
+      contentHeight = content.clientHeight;
+      windowWidth = window.innerWidth;
 
+      if (mediaHeight < contentHeight && windowWidth > mobileWidth) {
+        media.classList.add('resized');
+      } else if (mediaHeight > contentHeight && windowWidth < mobileWidth) {
+        media.classList.remove('resized');
+      }
+    }
+
+    window.addEventListener('load', onLoadFunction);
+  });
 }
