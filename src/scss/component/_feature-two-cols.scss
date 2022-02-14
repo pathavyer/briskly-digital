@@ -1,6 +1,13 @@
 .two-cols {
 
   &__media {
+
+    figure {
+      border-radius: 4px;
+      box-shadow: $image-shadow;
+      overflow: hidden;
+    }
+
     &.resized {
       height: 100%;
       width: 100%;
