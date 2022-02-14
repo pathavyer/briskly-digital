@@ -1,8 +1,12 @@
 // Media size
+$small: 767px;
+$medium: 960px;
+$large: 1200px;
+
 $breakpoints: (
-  'small':  ( min-width:  767px ),
-  'medium': ( min-width:  992px ),
-  'large':  ( min-width: 1280px )
+  'small':  ( min-width:  $small ),
+  'medium': ( min-width:  $medium ),
+  'large':  ( min-width: $large ),
 ) !default;
 
 
@@ -33,6 +37,12 @@ $button-color-secondary: $color-secondary;
 // Opacity
 $light-70: rgba($color-secondary, 0.7);
 
+// Border
+$border-radius: 4px;
 
 // Box shadow
-$image-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3), inset 0 -2px 6px 0 rgba(10, 37, 64, 0.35);
+$image-shadow-inset: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3), inset 0 -2px 6px 0 rgba(10, 37, 64, 0.35);
+
+$image-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -15px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+// Card shadow
+$card-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
