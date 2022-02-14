@@ -21,7 +21,7 @@
 <section class="section--wide two-cols">
   <div bp="container">
     <div class="section__content" bp="grid 6@md {{ 'vertical-' ~ vertical_align }}">
-      <div>
+      <div class="two-cols__media">
         {% include "partial/media.twig" with 
           {
             img: {
@@ -31,7 +31,7 @@
           } 
         %}
       </div>
-      <div {{ flip ? "bp='first@md'" }}>
+      <div class="two-cols__content" {{ flip ? "bp='first@md'" }}>
         {% include "partial/copy-block.twig" with 
           {
             subhead: fields.two_cols_content.subhead,
