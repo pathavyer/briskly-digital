@@ -66,15 +66,21 @@
   }
 
   &__cta--group {
-    display: flex;
-    align-items: center;
+    column-gap: 2.5rem;
+    display: block;
+
+    @include media('small') {
+      display: flex;
+    }
   }
 
   &__cta--group-btn {
     text-align: center;
+    margin-bottom: 2.5rem;
 
     @include media('small') {
       text-align: right;
+      margin-bottom: 0;
     }
   }
 
@@ -88,7 +94,6 @@
 
   &__image {
     box-shadow: $image-shadow;
-    @include font-size(0);
 
     figure {
       border-radius: $border-radius;
@@ -96,6 +101,7 @@
     }
 
     img {
+      display: block;
       width: 100%;
     }
   }
