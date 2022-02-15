@@ -12,66 +12,70 @@
   SupportsMultiple: true
 #}
 
-<section class="section--wide feature-why">
-  <div bp="container">
-    <div class="section__content" bp="grid 12">
-      <div class="section__content--wrapper">
-        <div class="section__content" bp="grid 6@md vertical-end">
-          <div>
-           {% include "partial/media.twig" with {
-              img: {
-                url: "https://via.placeholder.com/500x300",
-                alt: "Alternative terms"
-              }
-            } 
-           %}
-          </div>
-          <div>
-            {% include "partial/copy-block.twig" with 
-								{
-									subhead: fields.feature_why_main_content.subhead,
-									h2: fields.feature_why_main_content.headline,
-									body_wysiwyg: fields.feature_why_main_content.body,
-									link: {
-										type: fields.feature_why_main_content.link,
-										details: {
-											url: fields.feature_why_main_content.link_details.url,
-											title: fields.feature_why_main_content.link_details.title,
-											target: fields.feature_why_main_content.link_details.target,
-										},
-									}
-								}
-							%}
-          </div>
-        </div>
-      </div>
+{% extends "partial/section-block.twig" %}
 
-      <div class="section__content--wrapper">
-        <div bp="grid 4@md">
-          {% for item in fields.feature_why_items %}
-          <div class="feature-why__item">
-            <div bp="flex">
-              <div bp="fit margin-right">
-                {% include "partial/copy-block.twig" with 
-									{
-										icon: true,
-									}
-								%}
-              </div>
-              <div bp="fill">
-                {% include "partial/copy-block.twig" with 
-									{
-										p: item.headline,
-										body_plain: item.body
-									}
-								%}
-              </div>
-            </div>
-          </div>
-          {% endfor %}
+{% set classes = ['feature-why'] %}
+
+{% block content %}
+<div bp="container">
+  <div class="section__content" bp="grid 12">
+    <div class="section__content--wrapper">
+      <div class="section__content" bp="grid 6@md vertical-end">
+        <div>
+         {% include "partial/media.twig" with {
+            img: {
+              url: "https://via.placeholder.com/500x300",
+              alt: "Alternative terms"
+            }
+          } 
+         %}
+        </div>
+        <div>
+          {% include "partial/copy-block.twig" with 
+              {
+                subhead: fields.feature_why_main_content.subhead,
+                h2: fields.feature_why_main_content.headline,
+                body_wysiwyg: fields.feature_why_main_content.body,
+                link: {
+                  type: fields.feature_why_main_content.link,
+                  details: {
+                    url: fields.feature_why_main_content.link_details.url,
+                    title: fields.feature_why_main_content.link_details.title,
+                    target: fields.feature_why_main_content.link_details.target,
+                  },
+                }
+              }
+            %}
         </div>
       </div>
     </div>
+
+    <div class="section__content--wrapper">
+      <div bp="grid 4@md">
+        {% for item in fields.feature_why_items %}
+        <div class="feature-why__item">
+          <div bp="flex">
+            <div bp="fit margin-right">
+              {% include "partial/copy-block.twig" with 
+                {
+                  icon: true,
+                }
+              %}
+            </div>
+            <div bp="fill">
+              {% include "partial/copy-block.twig" with 
+                {
+                  p: item.headline,
+                  body_plain: item.body
+                }
+              %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
   </div>
-  <div class="feature-why__background"></div>
-</section>
+</div>
+<div class="feature-why__background"></div>
+{% endblock content %}
