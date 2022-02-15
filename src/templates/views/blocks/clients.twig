@@ -12,59 +12,41 @@
   SupportsMultiple: true
 #}
 
-<section class="section--wide clients">
-  <div bp="container">
-    <div bp="grid 6@md vertical-center">
-      <div class="clients__content">
-        {% include "partial/copy-block.twig" with {
-          subhead: fields.clients.subhead,
-          h2: fields.clients.headline
-        } %}
-      </div>
-      <div class="clients__media">
-        <div bp="grid 3@lg 6">
+{# <section class="section--wide clients">
+  
+</section> #}
 
-          {% for item in fields.clients.logos %}
-          <div>
-            {% include "partial/media.twig" with 
-              {
-                img: {
-                  url: item.logo.url | default ("https://via.placeholder.com/250x100"),
-                  alt: item.logo.alt
-                }
-              } 
-            %}
-          </div>
-          {% endfor %}
-          
-            
-          {# <div>
-            <img src="https://via.placeholder.com/250x100" alt="">
-          </div>
-          <div>
-            <img src="https://via.placeholder.com/250x100" alt="">
-          </div>
-          <div>
-            <img src="https://via.placeholder.com/250x100" alt="">
-          </div>
-          <div>
-            <img src="https://via.placeholder.com/250x100" alt="">
-          </div>
 
-          <div>
-            <img src="https://via.placeholder.com/250x100" alt="">
-          </div>
-          <div>
-            <img src="https://via.placeholder.com/250x100" alt="">
-          </div>
-          <div>
-            <img src="https://via.placeholder.com/250x100" alt="">
-          </div>
-          <div>
-            <img src="https://via.placeholder.com/250x100" alt="">
-          </div> #}
+{% extends "partial/section-block.twig" %}
+
+{% set classes = ['clients'] %}
+
+{% block content %}
+<div bp="container">
+  <div bp="grid 6@md vertical-center">
+    <div class="clients__content">
+      {% include "partial/copy-block.twig" with {
+        subhead: fields.clients.subhead,
+        h2: fields.clients.headline
+      } %}
+    </div>
+    <div class="clients__media">
+      <div bp="grid 3@lg 6">
+
+        {% for item in fields.clients.logos %}
+        <div>
+          {% include "partial/media.twig" with 
+            {
+              img: {
+                url: item.logo.url | default ("https://via.placeholder.com/250x100"),
+                alt: item.logo.alt
+              }
+            } 
+          %}
         </div>
+        {% endfor %}
       </div>
     </div>
   </div>
-</section>
+</div>
+{% endblock content %}
