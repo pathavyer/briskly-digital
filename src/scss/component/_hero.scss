@@ -73,7 +73,7 @@
   &__cta--group-btn {
     text-align: center;
 
-    @include media('medium') {
+    @include media('small') {
       text-align: right;
     }
   }
@@ -81,13 +81,19 @@
   &__cta--group-link {
     text-align: center;
 
-    @include media('medium') {
+    @include media('small') {
       text-align: left;
     }
   }
 
   &__image {
+    box-shadow: $image-shadow;
     @include font-size(0);
+
+    figure {
+      border-radius: $border-radius;
+      overflow: hidden;
+    }
 
     img {
       width: 100%;
