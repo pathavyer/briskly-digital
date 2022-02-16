@@ -78,34 +78,6 @@
             } %}
           </div>
         </div>
-        {# <div class="page-hero__cta--group" bp="grid 3@md vertical-center">
-          <div class="page-hero__cta--group-btn" bp="offset-2@md">
-            {% include "partial/cta.twig" with {
-              btn: {
-                type: field.button.button_style,
-                details: {
-                  url: field.button.button_link.url,
-                  title: field.button.button_link.title,
-                  target: field.button.button_link.target | default("_self"),
-                }
-              }
-            } %}
-            
-          </div>
-          <div class="page-hero__cta--group-link">
-            {% include "partial/cta.twig" with {
-              link: {
-                type: field.link.link_style,
-                details: {
-                  url: field.link.link_details.url,
-                  title: field.link.link_details.title,
-                  target: field.link.link_details.target | default("_self"),
-                }
-              }
-            } %}
-          </div>
-        </div> #}
-
         {% elseif field.acf_fc_layout == "single_button" %}
           <div>
             {% include "partial/cta.twig" with {
