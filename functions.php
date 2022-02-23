@@ -114,6 +114,7 @@ class BrisklySite extends Timber\Site
 			$allowed_blocks = array(
 				'acf/call-to-action',
 					'acf/clients',
+					'acf/feature-case-studies',
 					'acf/feature-icons',
 					'acf/feature-services',
 					'acf/feature-two-cols',
