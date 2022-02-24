@@ -104,15 +104,11 @@
 
   &__image {
     box-shadow: $image-shadow;
+    margin-top: 3rem;
 
     figure {
       border-radius: $border-radius;
       overflow: hidden;
-    }
-
-    img {
-      display: block;
-      width: 100%;
     }
   }
 

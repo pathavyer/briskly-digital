@@ -28,9 +28,14 @@
     p {
       @extend .bolder;
     }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
   }
 	// Copy content spacing
   &__body {
+
     p {
 			margin-bottom: 1.2rem;
 
@@ -58,7 +63,7 @@
 
   // Footer
   &__footer {
-    margin-top: .7rem;
+    margin-top: 1rem;
   }
 }
 
@@ -73,7 +78,7 @@ figure {
 
 // Skip to content
 a.skip-link {
-  left:-999px;
+  left:-99rem;
   position:absolute;
   top:auto;
   width:1px;
