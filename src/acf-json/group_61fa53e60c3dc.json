@@ -60,6 +60,22 @@
                     "ui_off_text": ""
                 },
                 {
+                    "key": "field_6217495f8eb5c",
+                    "label": "Body Content",
+                    "name": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
                     "key": "field_61fa544e1dc74",
                     "label": "Headline",
                     "name": "headline",
@@ -201,6 +217,22 @@
                     "max": 1
                 },
                 {
+                    "key": "field_621749898eb5d",
+                    "label": "Media Content",
+                    "name": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0
+                },
+                {
                     "key": "field_6206319d50a86",
                     "label": "Feature image",
                     "name": "feature_image",
@@ -245,5 +277,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1644623836
+    "modified": 1645693370
 }

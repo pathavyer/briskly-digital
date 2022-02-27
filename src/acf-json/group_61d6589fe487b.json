@@ -3,6 +3,22 @@
     "title": "Call to Action",
     "fields": [
         {
+            "key": "field_62174836b99fb",
+            "label": "Main Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_61e60fd39304b",
             "label": "CTA Block Main Content",
             "name": "cta_main_content",
@@ -93,6 +109,22 @@
                     "return_format": "array"
                 }
             ]
+        },
+        {
+            "key": "field_62174865b99fc",
+            "label": "Sub Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_61e6166f8fb10",
@@ -228,5 +260,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1642672454
+    "modified": 1645693068
 }
