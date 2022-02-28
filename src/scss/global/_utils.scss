@@ -23,6 +23,15 @@
 
 
 .copy {
+  // SVG 
+  &__icon {
+    svg {
+      width: 4rem;
+      height: 4rem;
+      fill: $color-primary--darkest;
+    }
+  }
+
 	// Copy head line variation
   &__head {
     p {
