@@ -3,6 +3,22 @@
     "title": "Feature Why",
     "fields": [
         {
+            "key": "field_621b45902dc02",
+            "label": "Main Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_61e7a3d01f8b1",
             "label": "Feature Why Block Main Content",
             "name": "feature_why_main_content",
@@ -114,6 +130,22 @@
             ]
         },
         {
+            "key": "field_621b45b12dc03",
+            "label": "Items",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_61e92d4bea27f",
             "label": "Feature Why Block Items",
             "name": "feature_why_items",
@@ -174,7 +206,7 @@
                     "key": "field_61e92eb183388",
                     "label": "Icon",
                     "name": "icon",
-                    "type": "true_false",
+                    "type": "icon-picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -183,11 +215,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "message": "",
-                    "default_value": 1,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
+                    "initial_value": ""
                 }
             ]
         }
@@ -210,5 +238,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1642672645
+    "modified": 1645955238
 }

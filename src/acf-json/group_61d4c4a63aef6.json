@@ -171,10 +171,10 @@
                     "new_lines": ""
                 },
                 {
-                    "key": "field_61e67dac35614",
-                    "label": "Thumbnail",
-                    "name": "image_thumbnail",
-                    "type": "image",
+                    "key": "field_621c92c88cd28",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "icon-picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -183,16 +183,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": 1,
-                    "mime_types": ""
+                    "initial_value": ""
                 }
             ]
         }
@@ -215,5 +206,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1642556421
+    "modified": 1646039798
 }
