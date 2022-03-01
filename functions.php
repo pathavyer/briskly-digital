@@ -88,7 +88,7 @@ class BrisklySite extends Timber\Site
 				// ACF Icon picker support
 				/// modify the path to the icons directory
 				add_filter('acf_icon_path_suffix', function ($path_suffix) {
-					return '/assets/icons/'; // After assets folder you can define folder structure
+					return 'src/assets/icons/'; // After assets folder you can define folder structure
 					}
 				);
 

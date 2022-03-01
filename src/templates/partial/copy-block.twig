@@ -32,8 +32,11 @@
   {# media #}
   {% if media %}
   {% if icon %}
-  <div class="copy__icon">
-    <img src="https://via.placeholder.com/50x50" alt="">
+  <div class="copy__icon {{ light ? "copy__icon--light" }}">
+    {# <img src="{{theme.path ~ "/src/assets/icons/" ~ icon ~ ".svg"}}" alt="{{ icon | replace({"-": " "}) }}">#}
+    <svg id="{{ icon }}">
+      <use xlink:href="#icon-{{icon}}"></use>
+    </svg>
   </div>
   {% elseif img %}
   <div class="copy__media">
