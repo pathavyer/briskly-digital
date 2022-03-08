@@ -21,7 +21,7 @@
   <div class="section__content" bp="grid 12">
     <div class="section__content--wrapper">
       <div class="section__content" bp="grid 6@md vertical-end">
-        <div>
+        <div class="{{ classes | join("") }}__media">
          {% include "partial/media.twig" with {
             img: {
               url: "https://via.placeholder.com/500x300",
@@ -55,7 +55,7 @@
         {% for item in fields.feature_why_items %}
         <div class="feature-why__item">
           <div bp="flex">
-            <div bp="fit margin-right">
+            <div bp="fit margin-right--lg">
               {% include "partial/copy-block.twig" with 
                 {
                   icon: item.icon,
