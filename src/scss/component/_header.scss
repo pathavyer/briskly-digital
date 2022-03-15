@@ -1,7 +1,7 @@
 .header {
     background-color: $light-70;
     left: 0;
-    height: 8rem;
+    height: 6rem;
     position: fixed;
     top:0;
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -22,7 +22,7 @@
 }
 
 .navbar {
-    line-height: 8rem;
+    line-height: 6rem;
 }
 
 
@@ -35,6 +35,6 @@
 
 .sDown {
     .header {
-        transform: translateY(-8rem);
+        transform: translateY(-6rem);
     }
 }
