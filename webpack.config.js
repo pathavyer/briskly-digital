@@ -14,7 +14,7 @@ module.exports = (env, argv) => {
     output: {
       filename: '[name].js',
       chunkFilename: '[name].js?ver=[chunkhash]',
-      publicPath: '/wp-content/themes/briskly/dist/',
+      publicPath: '/app/themes/briskly/dist/',
     },
     resolve: {
       extensions: ['*', '.js'],
@@ -64,7 +64,6 @@ module.exports = (env, argv) => {
             {
               loader: 'file-loader',
               options: {
-                publicPath: 'assets',
                 context: 'src',
                 name: '[path][name].[ext]?ver=[md5:hash:8]',
               },
