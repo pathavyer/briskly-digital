@@ -24,7 +24,7 @@
   }
 
   @else {
-    line-height: $line-height / $font-size;
+    line-height: calc($line-height / $font-size);
   }
 
   @if $letter-spacing==normal {
@@ -32,7 +32,7 @@
   }
 
   @else {
-    letter-spacing: #{$letter-spacing / $font-size}em;
+    letter-spacing: #{calc($letter-spacing / $font-size)}em;
   }
 }
 
