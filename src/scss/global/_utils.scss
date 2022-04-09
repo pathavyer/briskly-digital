@@ -25,10 +25,24 @@
 .copy {
   // SVG 
   &__icon {
+    position: relative;
+
     svg {
       width: 4rem;
       height: 4rem;
       fill: $color-primary--darkest;
+    }
+
+    &::after {
+      content: "";
+      background-color: $color-secondary--tint;
+      border-radius: 3px;
+      height: 100%;
+      position: absolute;
+      top: -5px;
+      left: 25px;
+      width: 2.5rem;
+      z-index: -1;
     }
   }
 

@@ -1,40 +1,60 @@
 .header {
-    background-color: $light-70;
-    left: 0;
-    height: 8rem;
-    position: fixed;
-    top:0;
-    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-    width: 100%;
-    z-index: 1;
+  background-color: $light-70;
+  left: 0;
+  height: 6rem;
+  position: fixed;
+  top: 0;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 100%;
+  z-index: 1;
 
-    &::after {
-        background: $color-secondary--tint;
-        background: radial-gradient(circle, rgba(255,255,255,1) 6%, rgba(202,253,234,1) 23%, rgba(255,255,255,1) 59%);
-        content: "";
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: .1rem;
-        
-    }
-    
+  &::after {
+    background: $color-secondary--tint;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 6%, rgba(202, 253, 234, 1) 23%, rgba(255, 255, 255, 1) 59%);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: .1rem;
+
+  }
+
 }
 
 .navbar {
-    line-height: 8rem;
+  line-height: 6rem;
+  padding: 0 2.5rem;
+
+  @include media("medium") {
+    padding: 0 4.5rem
+  }
+
+  &__logo {
+
+		a {
+			display: block;
+			width: 9.5rem;
+		}
+
+    img {
+      display: block;
+			height: auto;
+      width: 100%;
+    }
+  }
 }
 
 
 // animate header on scroll
 .sUp {
-    .header {
-        transform: translateY(0);;
-    }
+  .header {
+    transform: translateY(0);
+    ;
+  }
 }
 
 .sDown {
-    .header {
-        transform: translateY(-8rem);
-    }
+  .header {
+    transform: translateY(-6rem);
+  }
 }

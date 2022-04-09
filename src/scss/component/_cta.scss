@@ -1,21 +1,29 @@
 .cta {
 
-    &__inner {
-        border-radius: 3px;
-        background-color: $color-primary--light;
-        padding: 5rem 3.5rem;
+  &__inner {
+    border-radius: 3px;
+    background-color: $color-primary--light;
+    padding: 5rem 3.5rem;
 
-        @include media('medium') {
-            padding: 7.5rem 3.5rem;
-        }
+    @include media('medium') {
+      padding: 7.5rem 3.5rem;
     }
+  }
 
-    &__content {
-        color: $text-color--light;
+  &__content {
+    color: $text-color--light;
 
-        &--secondary {
-            color: $text-color--light;
-            @include font-size(16, 22, 0.2);
-        }
+    &--secondary {
+      color: $text-color--light;
+      @include font-size(16, 22, 0.2);
     }
+  }
+
+	& .copy__icon {
+		svg {
+			height: 3rem;
+			width: 3rem;
+			fill: $text-color--light;
+		}
+	}
 }
