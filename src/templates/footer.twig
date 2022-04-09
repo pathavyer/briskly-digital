@@ -1,33 +1,49 @@
-<div bp="container">
-  <div class="footer__content" bp="grid">
-    <div bp="4@md">
-      <div>
-
-        {% include "partial/copy-block.twig" with 
-					{
-									
-						p: "Briskly Digital",
-						body_wysiwyg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt rem id debitis delectus cum recusandae nisi quod, maxime harum, odio possimus architecto sapiente voluptas sint iure cupiditate, voluptate voluptatem",
-						
-					}
-				%}
+<div class="section--wide footer__content--inner">
+  <div bp="container">
+    <div class="footer__content" bp="grid">
+      <div bp="4@md">
+        <div>
+  
+          {% include "partial/copy-block.twig" with 
+            {
+                    
+              p: "Briskly Digital",
+              body_wysiwyg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt rem id debitis delectus cum recusandae nisi quod, maxime harum, odio possimus architecto sapiente voluptas sint iure cupiditate, voluptate voluptatem",
+              
+            }
+          %}
+        </div>
       </div>
-    </div>
-    <div bp="8@md">
-      <div class="footer__links" bp="grid 4@sm">
-        <div>
-
+      <div bp="8@md">
+        <div class="footer__links" bp="grid">
+          <div bp="4@md 6@sm offset-4@md">
+            {% include "menu.twig" with { footer_menu: footer_menu.get_items } %}
+          </div>
+          <div bp="4@md 6@sm">
+            {% include "partial/copy-block.twig" with 
+            {
+                    
+              p: "Let's chat",
+              body_wysiwyg: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+              btn: {
+                type: "secondary",
+                details: {
+                  title: "Contact Us",
+                  url: "#",
+                }
+              }
+              
+            }
+          %}
+          </div>
         </div>
-        <div>
-          {% include "menu.twig" with { footer_menu: footer_menu.get_items } %}
-        </div>
-        <div>4</div>
       </div>
     </div>
   </div>
+  
 </div>
 
 
 
 
-<!-- Copyright {{ "now"|date('Y') }} -->
+
