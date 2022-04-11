@@ -3,8 +3,8 @@
 
 Wordpress theme powered by [Timber](https://timber.github.io/docs/getting-started/setup/). This theme is configured to run with Bedrock WordPress boilerplate infrastructure. To find out more, follow the links below
 
-[Bedrock Documentation](https://docs.roots.io/bedrock/master/installation/#what-is-bedrock)
-[Bedrock Repository](https://github.com/roots/bedrock)
+* [Bedrock Documentation](https://docs.roots.io/bedrock/master/installation/#what-is-bedrock) 
+* [Bedrock Repository](https://github.com/roots/bedrock)
 
 ## Local development
 
