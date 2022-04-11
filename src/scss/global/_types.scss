@@ -58,3 +58,7 @@ a {
 small {
     @include font-size(14);
 }
+
+strong {
+    font-weight: 500;
+}

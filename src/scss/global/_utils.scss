@@ -9,7 +9,7 @@
 
   &__content {
     &[bp~="grid"] {
-      row-gap: 6rem;
+      row-gap: 7.5rem;
       column-gap: 6rem;
     }
   }
@@ -23,14 +23,42 @@
 
 
 .copy {
+  // SVG 
+  &__icon {
+    position: relative;
+
+    svg {
+      width: 4rem;
+      height: 4rem;
+      fill: $color-primary--darkest;
+    }
+
+    &::after {
+      content: "";
+      background-color: $color-secondary--tint;
+      border-radius: 3px;
+      height: 100%;
+      position: absolute;
+      top: -5px;
+      left: 25px;
+      width: 2.5rem;
+      z-index: -1;
+    }
+  }
+
 	// Copy head line variation
   &__head {
     p {
       @extend .bolder;
     }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
   }
 	// Copy content spacing
   &__body {
+
     p {
 			margin-bottom: 1.2rem;
 
@@ -55,4 +83,29 @@
 			}
 		}
   }
+
+  // Footer
+  &__footer {
+    margin-top: 1rem;
+  }
+}
+
+// Global image
+figure {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// Skip to content
+a.skip-link {
+  left:-99rem;
+  position:absolute;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  z-index:-999;
 }

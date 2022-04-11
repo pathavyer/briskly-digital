@@ -7,6 +7,16 @@
   --gradient-color-4: #ffffff;
 }
 
+// #content {
+//   background-image:#ffffff;background-image:  
+//   radial-gradient(at 22% 4%, hsla(282,0%,100%,1) 0, transparent 52%),  
+//   radial-gradient(at 37% 43%,hsl(157, 100%, 88%) 0, transparent 27%),  
+//   radial-gradient(at 57% 62%, hsla(282,0%,100%,1) 0, transparent 54%),  
+//   radial-gradient(at 86% 35%, hsla(282,0%,100%,1) 0, transparent 48%),  
+//   radial-gradient(at 98% 4%, hsla(282,0%,100%,1)  0, transparent 21%),  
+//   radial-gradient(at 95% 80%,hsl(157, 100%, 88%) 0, transparent 50%);
+//   }
+
 .hero {
   position: relative;
   width: 100%;
@@ -61,36 +71,44 @@
 
   &__head {
     h1 {
-      @include font-size(42);
+      @include font-size(49);
     }
   }
 
   &__cta--group {
-    display: flex;
-    align-items: center;
+    column-gap: 2.5rem;
+    display: block;
+
+    @include media('small') {
+      display: flex;
+    }
   }
 
   &__cta--group-btn {
     text-align: center;
+    margin-bottom: 2.5rem;
 
-    @include media('medium') {
+    @include media('small') {
       text-align: right;
+      margin-bottom: 0;
     }
   }
 
   &__cta--group-link {
     text-align: center;
 
-    @include media('medium') {
+    @include media('small') {
       text-align: left;
     }
   }
 
   &__image {
-    @include font-size(0);
+    box-shadow: $image-shadow;
+    margin-top: 3rem;
 
-    img {
-      width: 100%;
+    figure {
+      border-radius: $border-radius;
+      overflow: hidden;
     }
   }
 

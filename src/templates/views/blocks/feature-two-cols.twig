@@ -1,0 +1,93 @@
+{#
+  Title: Features Two Columns
+  Description: Section to showcases 2 cols features content
+  Category: formatting
+  Icon: admin-comments
+  Keywords: features icons blocks
+  Mode: edit
+  Align: left
+  PostTypes: page
+  SupportsAlign: center
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+
+{% set vertical_align = fields.two_cols_content.columns_content_align %}
+{% set cta_group = fields.two_cols_content.cta %}
+{% set flip = fields.two_cols_content.column_order %}
+{% set image = fields.two_cols_content.feature_image %}
+
+{% extends "partial/section-block.twig" %}
+
+{% set classes = ['two-cols'] %}
+
+{% block content %}
+<div bp="container">
+  <div class="section__content" bp="grid 6@md {{ 'vertical-' ~ vertical_align }}">
+    <div class="two-cols__media">
+      {% include "partial/media.twig" with 
+        {
+          img: {
+            url: image.url | default('https://via.placeholder.com/500x400'),
+            alt: image.alt
+          }
+        } 
+      %}
+    </div>
+    <div class="two-cols__content" {{ flip ? "bp='first@md'" }}>
+      {% include "partial/copy-block.twig" with 
+        {
+          subhead: fields.two_cols_content.subhead,
+          h2: fields.two_cols_content.headline,
+          body_wysiwyg: fields.two_cols_content.body_wysiwyg
+        } 
+      %}
+
+      <div class="two-cols__cta">
+        {% for field in cta_group %}
+        {% if field.acf_fc_layout == "cta_group" %}
+        <div class="two-cols__cta-group" bp="flex vertical-center">
+          <div class="two-cols__cta-group--btn" bp="fit">
+            {% include "partial/cta.twig" with {
+              btn: {
+                type: "primary",
+                details: {
+                  url: field.button.url,
+                  target: field.button.target | default("_blank"),
+                  title: field.button.title
+                }
+              }
+            } %}
+          </div>
+          <div class="two-cols__cta-group--link" bp="fill">
+            {% include "partial/cta.twig" with {
+              link: {
+                type: "primary",
+                details: {
+                  url:field.link.url,
+                  target: field.link.target | default("_blank"),
+                  title: field.link.title
+                }
+              }
+            } %}
+          </div>
+        </div>
+        {% elseif field.acf_fc_layout == "single_button" %} 
+          {% include "partial/cta.twig" with {
+            btn: {
+              type: "primary",
+              details: {
+                url: field.button.url,
+                target: field.button.target | default("_blank"),
+                title: field.button.title
+              }
+            }
+          } %}
+        {% endif %}
+        {% endfor %}
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% endblock content %}

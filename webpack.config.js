@@ -1,7 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WatchTimePlugin = require('webpack-watch-time-plugin');
 const cssnano = require('cssnano');
-const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -15,7 +14,7 @@ module.exports = (env, argv) => {
     output: {
       filename: '[name].js',
       chunkFilename: '[name].js?ver=[chunkhash]',
-      publicPath: '/wp-content/themes/briskly/dist/',
+      publicPath: '/app/themes/briskly/dist/',
     },
     resolve: {
       extensions: ['*', '.js'],
@@ -100,7 +99,7 @@ module.exports = (env, argv) => {
           options: {
             ident: 'postcss',
             plugins: [
-              autoprefixer({}),
+              autoprefixer(),
             ],
             sourceMap: true,
           },
@@ -133,11 +132,10 @@ module.exports = (env, argv) => {
           options: {
             ident: 'postcss',
             plugins: [
-              require('tailwindcss'),
               cssnano({
                 preset: 'default',
               }),
-              autoprefixer({}),
+              autoprefixer(),
             ],
             sourceMap: true,
           },

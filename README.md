@@ -1,7 +1,30 @@
 
-# Briskly Digital Theme - Extended from Timber Boilerplate
+# Briskly Digital Wordpress Theme
 
-## What's included
+Wordpress theme powered by [Timber](https://timber.github.io/docs/getting-started/setup/). This theme is configured to run with Bedrock WordPress boilerplate infrastructure. To find out more, follow the links below
+
+* [Bedrock Documentation](https://docs.roots.io/bedrock/master/installation/#what-is-bedrock) 
+* [Bedrock Repository](https://github.com/roots/bedrock)
+
+## Local development
+
+### Tooling and softwares
+#### Docker
+Docker is a virtualization tool that allows developers to create "containers" on their local machines that are consistent with the environments their code is being deployed on. This removes a key risk factor in team development by ensuring everybody is using the same configuration, resources, and library of tools.
+
+#### Lando
+Lando is a tool that runs on top of Docker, and makes the configuration and administration of a Docker container much easier. Lando automates common commands and instructions that would otherwise require complicated Docker configuration files.
+
+Lando can be installed using the instructions at: https://docs.lando.dev/basics/installation.html
+
+If you're running MacOS or Windows, installing Lando will also install Docker Desktop for you. You may also install Docker yourself at https://docs.docker.com/v17.09/engine/installation/. **However it is recommended that you use the Docker installation provided with Lando, as that will ensure compatability**.
+
+IMPORTANT: Once Lando is installed, you will need to trust the Lando certificate in order for the https protocol to work.
+
+Here is the recipe for running Bedrock with lando 
+[https://roots.io/guides/dockerize-local-bedrock-and-sage-development-with-lando/](https://roots.io/guides/dockerize-local-bedrock-and-sage-development-with-lando/)
+
+## What's included the theme
 
 * Timber template engine
 * Timber ACF block plugin
@@ -13,7 +36,7 @@
 * SVG optimization with svgo
 * File name hashes for long term caching
 
-## Installing the Theme
+## Installing the theme
 
 Install this theme as you would any other, and be sure the Timber plugin is activated. But hey, let's break it down into some bullets:
 
@@ -29,7 +52,7 @@ Install this theme as you would any other, and be sure the Timber plugin is acti
 
 Run `cd wp-content/themes/my-theme/ && npm install && npx webpack -p` to build minified files for production.
 
-## What's here?
+## What's included
 
 `src/templates/` contains all of your Twig templates. These pretty much correspond 1 to 1 with the PHP files that respond to the WordPress template hierarchy. At the end of each PHP template, you'll notice a `Timber::render()` function whose first parameter is the Twig file where that data (or `$context`) will be used. Just an FYI.
 

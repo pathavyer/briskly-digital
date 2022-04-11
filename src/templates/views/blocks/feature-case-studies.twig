@@ -1,0 +1,36 @@
+{#
+  Title: Case Studies
+  Description: Block with two columns content for, not limited to, case studies.
+  Category: formatting
+  Icon: admin-comments
+  Keywords: two column case studies block
+  Mode: edit
+  Align: center
+  PostTypes: page
+  SupportsAlign: center
+  SupportsMode: false
+  SupportsMultiple: true
+#}
+{% extends "partial/section-block.twig" %}
+{% set classes = "case-studies" %}
+{% set field = fields.case_studies %}
+{% block content %}
+
+<div bp="container">
+  <div class="section__content" bp="grid 6@md">
+    <div class="case-studies__col-l">
+      {% include "partial/copy-block.twig" with {
+        subhead:  field.subhead,
+        h2: field.headline,
+        body_wysiwyg: field.body_col_l
+      } %}
+    </div>
+    <div class="case-studies__col-r">
+      {% include "partial/copy-block.twig" with {
+        body_wysiwyg: field.body_col_r
+      } %}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

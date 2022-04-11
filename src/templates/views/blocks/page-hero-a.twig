@@ -19,65 +19,104 @@
 {% set cta = fields.page_hero_a.cta_group %}
 {% set media = fields.page_hero_a.image %}
 
-{# Output #}
-<section class="section--wide page-hero {{ media ? 'page-hero--media' }}">
-  <div class="page-hero__content" bp="container align-center 10--max full-width-until@md text-center">
-    <div bp="grid 12">
-      {% if subhead %}
-        <div class="page-hero__subhead">
-          <p>{{ subhead }}</p>
-        </div>
-      {% endif %}
+{% extends "partial/section-block.twig" %}
 
-      {% if head %}
-        <div class="page-hero__head">
-          <h1>{{ head }}</h1>
-        </div>
-      {% endif %}
+{% set classes = [
+  'page-hero',
+  media ? 'page-hero--media'
+] %}
 
-      {% if body %}
-        <div class="page-hero__body">
-          <p>{{ body }}</p>
-        </div>
-      {% endif %}
-
-      {% if cta %}
-      <div class="page-hero__cta">
-        {% for field in cta %}
-          {% if field.acf_fc_layout == "button_group" %}
-          <div class="page-hero__cta--group" bp="grid 3@md vertical-center">
-            <div class="page-hero__cta--group-btn" bp="offset-2@md">
-              <a class="btn {{ "btn--" ~ field.button.button_style }}" href="{{ field.button.button_link.title }}" {{'target="' ~ field.button.button_link.target | default('_self') ~ '"' }}>{{ field.button.button_link.title }}</a>
-            </div>
-            <div class="page-hero__cta--group-link">
-              <a class="link {{ "link--" ~ field.link.link_style }}" href="{{ field.link.link_details.url }}" {{'target="' ~ field.link.link_details.target | default('_self') ~ '"' }}>{{ field.link.link_details.title }}<svg class="icon-arrow" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-              </svg></a>
-            </div>
-          </div>
-
-          {% elseif field.acf_fc_layout == "single_button" %}
-            <div>
-              <a class="btn {{ "btn--" ~ field.button_style }}" href="{{ field.button_link.title }}" {{'target="' ~ field.button_link.target | default('_self') ~ '"' }}>{{ field.button_link.title }}</a>
-            </div>
-          {% endif %}
-    
-        {% endfor %}
+{% block content %}
+<div class="page-hero__content" bp="container align-center 10--max full-width-until@md text-center">
+  <div bp="grid 12">
+    {% if subhead %}
+      <div class="page-hero__subhead">
+        <p>{{ subhead }}</p>
       </div>
-      {% endif %}
-      
-   
-      {% if media %}
-        <div class="page-hero__image">
-          <img src="{{ media.url }}" alt="{{ media.alt }}">
-        </div>
-      {% endif %}
-    </div>
+    {% endif %}
 
-    {% if media %}
-      <div class="page-hero__shadow"></div>
-      <canvas class="hero__bg-gradient" id="gradient-canvas" data-transition-in></canvas>
+    {% if head %}
+      <div class="page-hero__head">
+        <h1>{{ head }}</h1>
+      </div>
+    {% endif %}
+
+    {% if body %}
+      <div class="page-hero__body">
+        <p>{{ body }}</p>
+      </div>
+    {% endif %}
+
+    {% if cta %}
+    <div class="page-hero__cta">
+      {% for field in cta %}
+        {% if field.acf_fc_layout == "button_group" %}
+
+        <div class="page-hero__cta--group" bp="flex vertical-center">
+          <div class="page-hero__cta--group-btn" bp="fill">
+            {% include "partial/cta.twig" with {
+              btn: {
+                type: field.button.button_style,
+                details: {
+                  url: field.button.button_link.url,
+                  title: field.button.button_link.title,
+                  target: field.button.button_link.target | default("_self"),
+                }
+              }
+            } %}
+          </div>
+          <div class="page-hero__cta--group-link" bp="fill 1@md">
+            {% include "partial/cta.twig" with {
+              link: {
+                type: field.link.link_style,
+                details: {
+                  url: field.link.link_details.url,
+                  title: field.link.link_details.title,
+                  target: field.link.link_details.target | default("_self"),
+                }
+              }
+            } %}
+          </div>
+        </div>
+        {% elseif field.acf_fc_layout == "single_button" %}
+          <div>
+            {% include "partial/cta.twig" with {
+              btn: {
+                type: field.button_style,
+                details: {
+                  url: field.button_link.url,
+                  title: field.button_link.title,
+                  target: field.button_link.target | default("_self"),
+                }
+              }
+            } %}
+          </div>
+        {% endif %}
+  
+      {% endfor %}
+    </div>
     {% endif %}
     
+ 
+    {% if media %}
+      <div class="page-hero__image">
+        {% include "partial/media.twig" with 
+          {
+            img: {
+              path: media.path,
+              url: media.url,
+              alt: media.alt
+            }
+          }
+        %}
+      </div>
+    {% endif %}
   </div>
-</section>
+
+  {% if media %}
+    <div class="page-hero__shadow"></div>
+    <canvas class="hero__bg-gradient" id="gradient-canvas" data-transition-in></canvas>
+  {% endif %}
+  
+</div>
+{% endblock content %}

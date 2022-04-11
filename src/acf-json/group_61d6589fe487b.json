@@ -3,6 +3,22 @@
     "title": "Call to Action",
     "fields": [
         {
+            "key": "field_62174836b99fb",
+            "label": "Main Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_61e60fd39304b",
             "label": "CTA Block Main Content",
             "name": "cta_main_content",
@@ -95,6 +111,22 @@
             ]
         },
         {
+            "key": "field_62174865b99fc",
+            "label": "Sub Content",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_61e6166f8fb10",
             "label": "CTA Block Sub Content",
             "name": "cta_sub_content",
@@ -155,20 +187,16 @@
                     "key": "field_61e6168d8fb11",
                     "label": "Icon",
                     "name": "icon",
-                    "type": "true_false",
+                    "type": "icon-picker",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "10",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     },
-                    "message": "",
-                    "default_value": 1,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
+                    "initial_value": ""
                 },
                 {
                     "key": "field_61e616cd8fb14",
@@ -179,7 +207,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "40",
+                        "width": "30",
                         "class": "",
                         "id": ""
                     },
@@ -228,5 +256,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1642672454
+    "modified": 1646040243
 }

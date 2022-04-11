@@ -1,0 +1,9 @@
+.case-studies {
+  &__col-r {
+    padding-top: 0;
+
+    @include media("small") {
+      padding-top: 4.5rem;
+    }
+  }
+}

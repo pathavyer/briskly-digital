@@ -83,8 +83,29 @@ class BrisklySite extends Timber\Site
 				add_filter('acf/settings/save_json', [$this, 'acf_json_save_point']);
 				add_filter('acf/settings/load_json', [$this, 'acf_json_load_point']);
 				add_filter('use_block_editor_for_post_type', [$this, 'prefix_disable_gutenberg'], 10, 2);
+				add_action('wp_enqueue_scripts', [$this, 'remove_wp_block_library_css'], 100);
+
+				// ACF Icon picker support
+				/// modify the path to the icons directory
+				add_filter('acf_icon_path_suffix', function ($path_suffix) {
+					return 'src/assets/icons/'; // After assets folder you can define folder structure
+					}
+				);
+
+				// modify the path to the above prefix
+				add_filter('acf_icon_path', function ($path_suffix) {
+						return '/app/web/app/themes/briskly/src';
+					}
+				);
+
+				// modify the URL to the icons directory to display on the page
+				add_filter('acf_icon_url', function ($path_suffix) {
+						return get_stylesheet_directory_uri();
+					}
+				);
+
 				parent::__construct();
-				
+	
 		}
 
 		/** This is where to register blocks **/
@@ -93,8 +114,10 @@ class BrisklySite extends Timber\Site
 			$allowed_blocks = array(
 				'acf/call-to-action',
 					'acf/clients',
+					'acf/feature-case-studies',
 					'acf/feature-icons',
 					'acf/feature-services',
+					'acf/feature-two-cols',
 					'acf/feature-why',
 					'acf/hero',
 					'acf/page-hero-a',
@@ -140,6 +163,17 @@ class BrisklySite extends Timber\Site
 				return $paths;
 		}
 
+		/** Disable wordpress default style */
+		//REMOVE GUTENBERG BLOCK LIBRARY CSS FROM LOADING ON FRONTEND
+		public function remove_wp_block_library_css()
+		{
+			wp_dequeue_style( 'wp-block-library' );
+			wp_dequeue_style( 'wp-block-library-theme' );
+			wp_dequeue_style( 'wc-block-style' ); // REMOVE WOOCOMMERCE BLOCK CSS
+			wp_dequeue_style( 'global-styles' ); // REMOVE THEME.JSON
+			
+		}
+
 		/** This is where you add some context
 		 *
 		 * @param string $context context['this'] Being the Twig's {{ this }}.
@@ -157,7 +191,7 @@ class BrisklySite extends Timber\Site
 
 				return $context;
 		}
-
+		
 		public function theme_supports()
 		{
 				// Add default posts and comments RSS feed links to head.
