@@ -24,9 +24,9 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ftp.${{ secrets.FTPhost }}
-        username: ${{ secrets.FTPuser }}
-        password: ${{ secrets.FTPpass }}
+        server: ftp.${{ secrets.FTPHOST }}
+        username: ${{ secrets.FTPUSER }}
+        password: ${{ secrets.FTPPASS }}
         exclude: |
           **/.git*
           **/.git*/**
