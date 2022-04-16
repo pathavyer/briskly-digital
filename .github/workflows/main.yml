@@ -1,4 +1,7 @@
-on: push
+on: 
+  push:
+    branches:
+      - master
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -24,7 +27,7 @@ jobs:
         server: ftp.${{ secrets.FTPhost }}
         username: ${{ secrets.FTPuser }}
         password: ${{ secrets.FTPpass }}
-         exclude: |
+        exclude: |
           **/.git*
           **/.git*/**
           **/node_modules/**
