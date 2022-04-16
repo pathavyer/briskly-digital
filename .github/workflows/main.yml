@@ -24,3 +24,8 @@ jobs:
         server: ftp.${{ secrets.FTPhost }}
         username: ${{ secrets.FTPuser }}
         password: ${{ secrets.FTPpass }}
+         exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/vendor/**
