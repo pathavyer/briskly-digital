@@ -24,7 +24,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ftp.${{ secrets.FTPHOST }}
+        server: ftp://23.227.163.50:24
         username: ${{ secrets.FTPUSER }}
         password: ${{ secrets.FTPPASS }}
         exclude: |
