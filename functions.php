@@ -71,7 +71,7 @@ class BrisklySite extends Timber\Site
 		public function __construct()
 		{
 				add_filter('timber/acf-gutenberg-blocks-templates', function () {
-						return ['src/templates/views/blocks']; 
+						return ['dist/templates/views/blocks']; 
 				});
 				add_action('after_setup_theme', [$this, 'theme_supports']);
 				add_filter('timber/context', [$this, 'add_to_context']);
