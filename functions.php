@@ -82,7 +82,7 @@ class BrisklySite extends Timber\Site
 				add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
 				add_filter('acf/settings/save_json', [$this, 'acf_json_save_point']);
 				add_filter('acf/settings/load_json', [$this, 'acf_json_load_point']);
-				add_filter('use_block_editor_for_post_type', [$this, 'prefix_disable_gutenberg'], 10, 2);
+				// add_filter('use_block_editor_for_post_type', [$this, 'prefix_disable_gutenberg'], 10, 2);
 				add_action('wp_enqueue_scripts', [$this, 'remove_wp_block_library_css'], 100);
 
 				// ACF Icon picker support
